@@ -112,7 +112,8 @@ const actions = {
         state.totalMoney.initPrice -= state.shoppingCarts[cartIndex].price;
         state.totalMoney.discountPrice = 0;
         state.totalMoney.discountPriceTag = MoneyFormat(0);
-        state.totalMoney.priceTag = MoneyFormat(state.totalMoney.initPrice);
+        state.totalMoney.payment = state.totalMoney.initPrice;
+        state.totalMoney.priceTag = MoneyFormat(state.totalMoney.payment);
         storage.setTotalMoney(state.totalMoney);
 
         state.shoppingCarts.splice(cartIndex, 1);
