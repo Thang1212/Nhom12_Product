@@ -36,7 +36,7 @@ function Home({ logo, panelImgs, shoppingCarts }) {
                     </button>
         
                     <button type="" class="userinfo__signin btn btn-outline-secondary">
-                        <a href="#" class="signin__link text-dark text-decoration-none">
+                        <a href="./html/signin.html" class="signin__link text-dark text-decoration-none">
                             <i class="signin__icon far fa-user"></i>
                             <span><strong>Tài khoản</strong></span>
                         </a>

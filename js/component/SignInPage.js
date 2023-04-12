@@ -7,38 +7,36 @@ function SignInPage({ }) {
     return html`
         ${Header()}
 
-        <div id="signin">
-            <div class="container">
-                <h1>Please Login</h1>
+        <main>
+            <section class="container form-signin w-25 m-auto pt-5 pb-5 text-center">
+                <form>
+                    <h1 class="h3 mb-3 fw-normal">Vui lòng đăng nhập</h1>
 
-                <form action="" method="POST" class="" id="">
-                    <div class="form-control">
-                        <input type="username" name="username" id="" class="" required>
-                        <label for="username" class="form__label">Email / Name</label>
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                        <label for="floatingPassword">Password</label>
                     </div>
 
-                    <div class="form-control">
-                        <input type="password" name="password" id="" class="" required>
-                        <label>Password</label>
+                    <div class="checkbox mb-3 mt-3">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Nhớ tôi 
+                        </label>
                     </div>
-
-                    <button class="btn">Login</button>
-
-                    <p class="text">
-                        Don't have an account?
-                        <a 
-                            href="./signup.html"
-                            onclick="dispatch('createUserAccount')"
-                        >
-                            Register
-                        </a>
-                    </p>
+                    <p class="text-dark">Chưa có tài khoản? <a href="./signup.html"> Đăng kí</a></p>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Đăng nhập</button>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
                 </form>
-            </div> 
-        </div>
+            </section>
+        </main>
 
         ${Footer()}
     `;
 }
 
 export default connect()(SignInPage);
+
+                    // <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"></img>
