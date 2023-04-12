@@ -5,7 +5,7 @@ function Header({ logo, shoppingCarts }) {
     return html`
         <header class="container-fluid p-3">
             <div class="row">
-                <a href="#" class="header__logo col-lg-3 d-flex justify-content-center">
+                <a href="../index.html" class="header__logo col-lg-3 d-flex justify-content-center">
                     <img src="${logo}" alt="" class="logo__img"> 
                 </a>
 

@@ -1,11 +1,13 @@
 import html from '../core.js';
 import Header from './Header.js' 
+import NavBar from './NavBar.js' 
 import Footer from './Footer.js' 
 import { connect } from '../store.js';
 
 function SignUpPage() {
     return html`
         ${Header()}
+        ${NavBar()}
 
         <main>
             <section class="container form-signin w-25 m-auto pt-5 pb-5 text-center">
