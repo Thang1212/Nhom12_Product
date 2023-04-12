@@ -36,7 +36,12 @@ function SamsungPage({ samsungs, sortingType }) {
                                         </div>
 
                                         <div class="product__body card-body">
-                                            <a href="#" class="product__name card-text text-decoration-none">${samsung.name}</a>
+                                            <a
+                                                class="product__name card-text text-decoration-none"
+                                                onclick="dispatch('navigateCurrentProductDetail', 'samsungs', ${index})"
+                                            >
+                                                ${samsung.name}
+                                            </a>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
                                                     <p class="product__actualprice border border-danger text-sm-danger rounded p-1">${samsung.priceTags.actualPrice}đ</p>
@@ -63,7 +68,12 @@ function SamsungPage({ samsungs, sortingType }) {
                                         </div>
 
                                         <div class="product__body card-body">
-                                            <a href="#" class="product__name card-text text-decoration-none">${samsung.name}</a>
+                                            <a
+                                                class="product__name card-text text-decoration-none"
+                                                onclick="dispatch('navigateCurrentProductDetail', 'samsungs', ${index})"
+                                            >
+                                                ${samsung.name}
+                                            </a>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
                                                     <p class="product__actualprice border border-danger text-sm-danger rounded p-1">${samsung.priceTags.actualPrice}đ</p>

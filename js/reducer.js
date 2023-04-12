@@ -1,6 +1,8 @@
 import storage, { iphones, samsungs, googlePixels, oppos, sacduphong, saccap, oplungdienthoai } from './util/storage.js';
 
 const init = {
+    currentProductDetail: storage.getCurrentProductDetail(),
+
     logo: 'https://drive.google.com/uc?export=view&id=1NlE5IQq064nBUXG7iUL3CPyqULeHTvc0',
 
     sortingType: 'default',
@@ -160,6 +162,26 @@ const actions = {
             console.log('same username');
     },
 
+    navigateCurrentProductDetail(state, productBrand, productIndex) {
+        let currentProduct = state[productBrand][productIndex];
+
+        state.currentProductDetail.productBrand = productBrand
+        state.currentProductDetail.productIndex = productIndex 
+        state.currentProductDetail.name = currentProduct.name
+        state.currentProductDetail.price = currentProduct.price
+        state.currentProductDetail.priceTags = currentProduct.priceTags
+        state.currentProductDetail.details = currentProduct.details
+        state.currentProductDetail.img = currentProduct.img
+
+        storage.setCurrentProductDetail(state.currentProductDetail);
+        window.location = '../html/productdetail.html';
+    },
+
+    navigateCheckOutCart(state, productBrand, productIndex) {
+        this.increaseCart(state, productBrand, productIndex);
+
+        window.location = '../html/checkoutcart.html';
+    }
 }
 
 export default function reducer(state = init, action, args) {

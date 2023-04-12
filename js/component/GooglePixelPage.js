@@ -36,7 +36,12 @@ function GooglePixelPage({ googlePixels, sortingType }) {
                                         </div>
 
                                         <div class="product__body card-body">
-                                            <a href="#" class="product__name card-text text-decoration-none">${ggp.name}</a>
+                                            <a
+                                                class="product__name card-text text-decoration-none"
+                                                onclick="dispatch('navigateCurrentProductDetail', 'googlePixels', ${index})"
+                                            >
+                                                ${ggp.name}
+                                            </a>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
                                                     <p class="product__actualprice border border-danger text-sm-danger rounded p-1">${ggp.priceTags.actualPrice}đ</p>
@@ -63,7 +68,12 @@ function GooglePixelPage({ googlePixels, sortingType }) {
                                         </div>
 
                                         <div class="product__body card-body">
-                                            <a href="#" class="product__name card-text text-decoration-none">${ggp.name}</a>
+                                            <a
+                                                class="product__name card-text text-decoration-none"
+                                                onclick="dispatch('navigateCurrentProductDetail', 'googlePixels', ${index})"
+                                            >
+                                                ${ggp.name}
+                                            </a>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
                                                     <p class="product__actualprice border border-danger text-sm-danger rounded p-1">${ggp.priceTags.actualPrice}đ</p>
