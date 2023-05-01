@@ -40,6 +40,9 @@ const init = {
 
     users: storage.getUsers(),
 
+    currentUser: storage.getCurrentUser(),
+
+    firstSignUp: false,
 }
 
 let MoneyFormat = new Intl.NumberFormat().format;
@@ -181,6 +184,21 @@ const actions = {
         this.increaseCart(state, productBrand, productIndex);
 
         window.location = '../html/checkoutcart.html';
+    },
+
+    userSignUp(state, userData) {
+        state.users.push(userData);
+        state.currentUser = userData;
+        state.firstSignUp = true;
+
+        storage.setUsers(state.users);
+        storage.setCurrentUser(userData);
+
+        window.location = '../index.html';
+    },
+
+    showFirstSignUpModal(state) {
+        state.firstSignUp = false;
     }
 }
 

@@ -3,6 +3,7 @@
 const SHOPPINGCARTS_STORAGE_KEYS = 'SHOPPINGCARTS';
 const TOTALMONEY_STORAGE_KEYS = 'TOTALMONEY';
 const USERS_STORAGE_KEYS = 'USERS';
+const CURRENTUSER_STORAGE_KEYS = 'CURRENTUSER';
 const CURRENTPRODUCTDETAIL_STORAGE_KEYS = 'CURRENTPRODUCTDETAIL';
 
 export default {
@@ -34,6 +35,14 @@ export default {
 
     setUsers(users) {
         localStorage.setItem(USERS_STORAGE_KEYS, JSON.stringify(users));
+    },
+
+    getCurrentUser() {
+        return JSON.parse(localStorage.getItem(CURRENTUSER_STORAGE_KEYS)) || null;
+    },
+
+    setCurrentUser(currentUser) {
+        localStorage.setItem(CURRENTUSER_STORAGE_KEYS, JSON.stringify(currentUser));
     },
 
     getCurrentProductDetail() {

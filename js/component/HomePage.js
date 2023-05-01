@@ -1,10 +1,9 @@
 import html from '../core.js';
-import NavBar from './NavBar.js';
 import HeaderPanel from './HeaderPanel.js'
 import Footer from './Footer.js' 
 import { connect } from '../store.js';
 
-function Home({ logo, panelImgs, shoppingCarts }) {
+function Home({ logo, panelImgs, shoppingCarts, currentUser }) {
     return html`
         <header class="container-fluid p-3">
             <div class="row">
@@ -38,7 +37,7 @@ function Home({ logo, panelImgs, shoppingCarts }) {
                     <button type="" class="userinfo__signin btn btn-outline-secondary">
                         <a href="./html/signin.html" class="signin__link text-dark text-decoration-none">
                             <i class="signin__icon far fa-user"></i>
-                            <span><strong>Tài khoản</strong></span>
+                            <span><strong>${currentUser === null ? 'Tài khoản' : currentUser.name}</strong></span>
                         </a>
                     </button>
                 </div>

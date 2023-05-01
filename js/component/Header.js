@@ -1,7 +1,7 @@
 import html from '../core.js';
 import { connect } from '../store.js';
 
-function Header({ logo, shoppingCarts }) {
+function Header({ logo, shoppingCarts, currentUser }) {
     return html`
         <header class="container-fluid p-3">
             <div class="row">
@@ -35,7 +35,7 @@ function Header({ logo, shoppingCarts }) {
                     <button type="" class="userinfo__signin btn btn-outline-secondary">
                         <a href="./signin.html" class="signin__link text-dark text-decoration-none">
                             <i class="signin__icon far fa-user"></i>
-                            <span><strong>Tài khoản</strong></span>
+                            <span><strong>${currentUser === null ? 'Tài khoản' : currentUser.name}</strong></span>
                         </a>
                     </button>
                 </div>

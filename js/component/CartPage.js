@@ -5,8 +5,8 @@ import HeaderPanel from './HeaderPanel.js'
 import Footer from './Footer.js' 
 import { connect } from '../store.js';
 
-function CartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixels, sacduphong, saccap, oplungdienthoai, totalMoney }) {
-    let phones = { iphones, samsungs, oppos, googlePixels, sacduphong, saccap, oplungdienthoai };
+function CartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixels, totalMoney }) {
+    let phones = { iphones, samsungs, oppos, googlePixels };
 
     return html`
         ${Header()}
