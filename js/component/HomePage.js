@@ -93,8 +93,8 @@ function Home({ logo, panelImgs, shoppingCarts, currentUser }) {
             <section class="container-fluid mt-4 bg-black mt-3">
                 <div class="row mt-3">
                     ${panelImgs.map(img => `
-                        <a href="#" class="col-sm-6 mb-4">
-                            <img src=${img} alt="" class="h-100 w-100 object-fit-cover">
+                        <a href=${img.location} class="col-sm-6 mb-4">
+                            <img src=${img.link} alt="" class="h-100 w-100 object-fit-cover">
                         </a>
                     `)}
                 </div>

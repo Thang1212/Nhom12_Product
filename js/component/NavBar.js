@@ -25,7 +25,7 @@ function NavBar(htmlPage = '') {
                         <a class="nav-link active" href="${htmlPage === 'oppo'? '#' : './oppo.html'}">Oppo</a>
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="navbar__dropdown nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Phụ kiện
                         </a>

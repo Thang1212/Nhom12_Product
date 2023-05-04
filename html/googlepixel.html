@@ -28,5 +28,15 @@
     <script src="../js/util/toastmessage.js"></script>
 
     <script src="../js/util/product.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.navbar__dropdown').hover(function () {
+                $(this).find('.dropdown-menu').addClass('show');
+            }, function(){
+                $(this).find('.dropdown-menu').removeClass('show');
+            });
+        });
+    </script>
 </body>
 </html>
