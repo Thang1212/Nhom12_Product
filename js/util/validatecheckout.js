@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    let shoppingCarts = JSON.parse(localStorage.getItem('SHOPPINGCARTS'));
     let userData = null;
 
     function validateFirstName() {
@@ -230,6 +231,11 @@ $(document).ready(function () {
                 zipcode: $('.form__control__zipcode').val(),
                 cardname: $('.form__control__cardname').val(),
                 seriescard: $('.form__control__seriescard').val(),
+            }
+
+            if (!shoppingCarts || !shoppingCarts.length) {
+                showErrorToast('Giỏ hàng đang trống, xin vui lòng quay trở lại!!')
+                return false;
             }
 
             return true;

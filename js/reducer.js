@@ -225,10 +225,17 @@ const actions = {
 
     beginCheckout(state, orderData) {
         state.beginCheckout = true;
-        state.order = orderData;
+        state.order.firstname = orderData.firstname;
+        state.order.lastname = orderData.lastname;
+        state.order.username = orderData.username;
+        state.order.email = orderData.email;
+        state.order.address = orderData.address;
+        state.order.zipcode = orderData.zipcode;
+        state.order.cardname = orderData.cardname;
+        state.order.seriescard = orderData.seriescard;
 
         storage.setBeginCheckout(true);
-        storage.setOrder(orderData);
+        storage.setOrder(state.order);
 
         window.location = '../index.html';
     },

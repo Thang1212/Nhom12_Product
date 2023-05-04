@@ -62,7 +62,16 @@ export default {
     },
 
     getOrder() {
-        return JSON.parse(localStorage.getItem(ORDER_KEYS)) || null;
+        return JSON.parse(localStorage.getItem(ORDER_KEYS)) || {
+            firstname: '',
+            lastname: '',
+            username: '',
+            email: '',
+            address: '',
+            zipcode: null,
+            cardname: '',
+            seriescard: null,
+        };
     },
 
     setOrder(orderData) {
