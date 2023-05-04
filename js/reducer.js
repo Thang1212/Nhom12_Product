@@ -49,11 +49,11 @@ const init = {
         {
             location: '../../html/oppo.html',
             link: 'https://drive.google.com/uc?export=view&id=1t-loQXKkBtrJZg6j91AeK8dJgmnWm7Qg',
-        }
+        },
         {
             location: '../../html/oppo.html',
             link: 'https://drive.google.com/uc?export=view&id=1MWyY33BqlWa3iiqBGViFykpOH_t5gKxq',
-        }
+        },
     ],
 
     shoppingCarts: storage.getCarts(), 
