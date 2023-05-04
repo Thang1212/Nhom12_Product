@@ -42,7 +42,11 @@ const init = {
 
     currentUser: storage.getCurrentUser(),
 
-    firstSignUp: false,
+    isFirstSignUp: storage.getIsFirstSignUp(),
+
+    beginCheckout: storage.getBeginCheckout(),
+
+    order: storage.getOrder()
 }
 
 let MoneyFormat = new Intl.NumberFormat().format;
@@ -189,16 +193,50 @@ const actions = {
     userSignUp(state, userData) {
         state.users.push(userData);
         state.currentUser = userData;
-        state.firstSignUp = true;
+        state.isFirstSignUp = true;
 
         storage.setUsers(state.users);
         storage.setCurrentUser(userData);
+        storage.setIsFirstSignUp(true);
 
         window.location = '../index.html';
     },
 
     showFirstSignUpModal(state) {
         state.firstSignUp = false;
+    },
+
+    userSignIn(state, userData) {
+        state.users.forEach(user => {
+            if (user.email === userData.email && user.password === userData.password) {
+                storage.setCurrentUser(user);
+                return;
+            }
+        })
+
+        window.location = '../index.html';
+    },
+
+    endOfFirstSignUpModal(state) {
+        state.firstSignUp = false;
+
+        storage.setIsFirstSignUp(false);
+    },
+
+    beginCheckout(state, orderData) {
+        state.beginCheckout = true;
+        state.order = orderData;
+
+        storage.setBeginCheckout(true);
+        storage.setOrder(orderData);
+
+        window.location = '../index.html';
+    },
+
+    endCheckout(state) {
+        state.beginCheckout = false;
+
+        storage.setBeginCheckout(false);
     }
 }
 

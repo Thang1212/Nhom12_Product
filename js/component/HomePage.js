@@ -1,10 +1,15 @@
 import html from '../core.js';
 import HeaderPanel from './HeaderPanel.js'
 import Footer from './Footer.js' 
+import FirstSignUpModal from '../modal/FirstSignUpModal.js';
+import CheckoutModal from '../modal/CheckoutModal.js';
 import { connect } from '../store.js';
 
 function Home({ logo, panelImgs, shoppingCarts, currentUser }) {
     return html`
+        ${FirstSignUpModal()}
+        ${CheckoutModal()}
+
         <header class="container-fluid p-3">
             <div class="row">
                 <a href="#" class="header__logo col-lg-3 d-flex justify-content-center">
@@ -35,7 +40,7 @@ function Home({ logo, panelImgs, shoppingCarts, currentUser }) {
                     </button>
         
                     <button type="" class="userinfo__signin btn btn-outline-secondary">
-                        <a href="./html/signin.html" class="signin__link text-dark text-decoration-none">
+                        <a href=${currentUser === null ? './html/signin.html' : '#'} class="signin__link text-dark text-decoration-none">
                             <i class="signin__icon far fa-user"></i>
                             <span><strong>${currentUser === null ? 'Tài khoản' : currentUser.name}</strong></span>
                         </a>

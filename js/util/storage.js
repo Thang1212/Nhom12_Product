@@ -5,6 +5,9 @@ const TOTALMONEY_STORAGE_KEYS = 'TOTALMONEY';
 const USERS_STORAGE_KEYS = 'USERS';
 const CURRENTUSER_STORAGE_KEYS = 'CURRENTUSER';
 const CURRENTPRODUCTDETAIL_STORAGE_KEYS = 'CURRENTPRODUCTDETAIL';
+const ISFIRSTSIGNUP_KEYS = 'ISFIRSTSIGNUP';
+const BEGINCHECKOUT_KEYS = 'BEGINCHECKOUT';
+const ORDER_KEYS = 'ORDER';
 
 export default {
     getCarts() {
@@ -30,7 +33,20 @@ export default {
     },
 
     getUsers() {
-        return JSON.parse(localStorage.getItem(USERS_STORAGE_KEYS)) || [];
+        let users = JSON.parse(localStorage.getItem(USERS_STORAGE_KEYS)) || []; 
+        if (!users.length) {
+            users.push({
+                name: 'Admin',
+                number: '0363491030',
+                address: 'Nam Dinh',
+                email: 'wttttu1234@gmail.com',
+                password: 'admin123',
+            })
+
+            localStorage.setItem(USERS_STORAGE_KEYS, JSON.stringify(users));
+        }
+
+        return users;
     },
 
     setUsers(users) {
@@ -43,6 +59,14 @@ export default {
 
     setCurrentUser(currentUser) {
         localStorage.setItem(CURRENTUSER_STORAGE_KEYS, JSON.stringify(currentUser));
+    },
+
+    getOrder() {
+        return JSON.parse(localStorage.getItem(ORDER_KEYS)) || null;
+    },
+
+    setOrder(orderData) {
+        localStorage.setItem(ORDER_KEYS, JSON.stringify(orderData));
     },
 
     getCurrentProductDetail() {
@@ -59,6 +83,22 @@ export default {
 
     setCurrentProductDetail(currentProductDetail) {
         localStorage.setItem(CURRENTPRODUCTDETAIL_STORAGE_KEYS, JSON.stringify(currentProductDetail));
+    },
+
+    getIsFirstSignUp() {
+        return JSON.parse(localStorage.getItem(ISFIRSTSIGNUP_KEYS)) || false;
+    },
+
+    setIsFirstSignUp(isFirstSignUp) {
+        localStorage.setItem(ISFIRSTSIGNUP_KEYS, JSON.stringify(isFirstSignUp));
+    },
+
+    getBeginCheckout() {
+        return JSON.parse(localStorage.getItem(BEGINCHECKOUT_KEYS)) || false;
+    },
+
+    setBeginCheckout(isBeginCheckout) {
+        localStorage.setItem(BEGINCHECKOUT_KEYS, JSON.stringify(isBeginCheckout));
     },
 }
         

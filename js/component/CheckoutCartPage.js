@@ -11,6 +11,8 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
         ${Header()}
         ${NavBar()}
 
+        <div id="toastmess"></div>
+
 		<main>
             <section class="container pb-5">
                 <div class="py-5 text-center">
@@ -70,7 +72,7 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
                             <div class="row g-3">
                                 <div class="col-sm-6">
                                     <label for="firstName" class="form-label">Tên</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder=""
+                                    <input type="text" class="form__control__firstname form-control" id="firstName" placeholder=""
                                         value="" required>
                                     <div class="invalid-feedback">
                                         Valid first name is required.
@@ -79,7 +81,7 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
 
                                 <div class="col-sm-6">
                                     <label for="lastName" class="form-label">Họ</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder=""
+                                    <input type="text" class="form__control__lastname form-control" id="lastName" placeholder=""
                                         value="" required>
                                     <div class="invalid-feedback">
                                         Valid last name is required.
@@ -90,7 +92,7 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
                                     <label for="username" class="form-label">Username</label>
                                     <div class="input-group has-validation">
                                         <span class="input-group-text">@</span>
-                                        <input type="text" class="form-control" id="username"
+                                        <input type="text" class="form__control__username form-control" id="username"
                                             placeholder="Username" required>
                                         <div class="invalid-feedback">
                                             Your username is required.
@@ -100,7 +102,7 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
 
                                 <div class="col-12">
                                     <label for="email" class="form-label">Email <span class="text-muted">(Không bắt buộc)</span></label>
-                                    <input type="email" class="form-control" id="email"
+                                    <input type="email" class="form__control__email form-control" id="email"
                                         placeholder="you@example.com">
                                     <div class="invalid-feedback">
                                         Please enter a valid email address for shipping updates.
@@ -109,7 +111,7 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
 
                                 <div class="col-12">
                                     <label for="address" class="form-label">Địa chỉ </label>
-                                    <input type="text" class="form-control" id="address" placeholder="1234
+                                    <input type="text" class="form__control__address1 form-control" id="address" placeholder="1234
                                         Đường chính" required>
                                     <div class="invalid-feedback">
                                         Please enter your shipping address.
@@ -119,13 +121,13 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
                                 <div class="col-12">
                                     <label for="address2" class="form-label">Địa chỉ 2 <span
                                             class="text-muted">(Không bắt buộc)</span></label>
-                                    <input type="text" class="form-control" id="address2"
+                                    <input type="text" class="form__control__address2 form-control" id="address2"
                                         placeholder="Căn hộ hoặc chung cư">
                                 </div>
 
                                 <div class="col-md-3">
                                     <label for="zip" class="form-label">Zip code</label>
-                                    <input type="text" class="form-control" id="zip" placeholder=""
+                                    <input type="text" class="form__control__zipcode form-control" id="zip" placeholder=""
                                         required>
                                     <div class="invalid-feedback">
                                         Zip code required.
@@ -170,7 +172,7 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
                             <div class="row gy-3">
                                 <div class="col-md-6">
                                     <label for="cc-name" class="form-label">Tên card</label>
-                                    <input type="text" class="form-control" id="cc-name" placeholder=""
+                                    <input type="text" class="form__control__cardname form-control" id="cc-name" placeholder=""
                                         required>
                                     <small class="text-muted">Tên đầy đủ như hiển thị trên thẻ</small>
                                     <div class="invalid-feedback">
@@ -180,7 +182,7 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
 
                                 <div class="col-md-6">
                                     <label for="cc-number" class="form-label">Số series card</label>
-                                    <input type="text" class="form-control" id="cc-number" placeholder=""
+                                    <input type="text" class="form__control__seriescard form-control" id="cc-number" placeholder=""
                                         required>
                                     <div class="invalid-feedback">
                                         Credit card number is required
@@ -189,7 +191,7 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
 
                                 <div class="col-md-3">
                                     <label for="cc-expiration" class="form-label">Ngày hết hạn</label>
-                                    <input type="text" class="form-control" id="cc-expiration"
+                                    <input type="text" class="form__control__dateexpired form-control" id="cc-expiration"
                                         placeholder="" required>
                                     <div class="invalid-feedback">
                                         Expiration date required
@@ -198,7 +200,7 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
 
                                 <div class="col-md-3">
                                     <label for="cc-cvv" class="form-label">CVV</label>
-                                    <input type="text" class="form-control" id="cc-cvv" placeholder=""
+                                    <input type="text" class="form__control__securitycode form-control" id="cc-cvv" placeholder=""
                                         required>
                                     <div class="invalid-feedback">
                                         Security code required
@@ -208,7 +210,12 @@ function CheckoutCartPage({ shoppingCarts, iphones, samsungs, oppos, googlePixel
 
                             <hr class="my-4">
 
-                            <button class="w-100 btn btn-primary btn-lg" type="submit">Tiếp tục đặt hàng</button>
+                            <button 
+                                class="checkout__btn__submit w-100 btn btn-primary btn-lg" 
+                                type="submit"
+                            >
+                                Tiếp tục đặt hàng
+                            </button>
                         </form>
                     </div>
                 </div>
