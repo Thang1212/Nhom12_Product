@@ -23,35 +23,35 @@ const init = {
 
     panelImgs: [
         {
-            location: '../../html/iphone.html',
+            location: './html/iphone.html',
             link: 'https://drive.google.com/uc?export=view&id=1XSeI31Jzcd3nDJp2mB-Lw-7cxnBQoEFt',
         },
         {
-            location: '../../html/iphone.html',
+            location: './html/iphone.html',
             link: 'https://drive.google.com/uc?export=view&id=1yE8h8AOOQwoPYZynDc_qw-DEozcAcI1a',
         },
         {
-            location: '../../html/samsung.html',
+            location: './html/samsung.html',
             link: 'https://drive.google.com/uc?export=view&id=1UEdrvEB_FHv_jfgWNbvAvbFd211yUQ6a',
         },
         {
-            location: '../../html/samsung.html',
+            location: './html/samsung.html',
             link: 'https://drive.google.com/uc?export=view&id=1pj0zQm2eX-XJDmVOt0zeWjxRcmlcA98A',
         },
         {
-            location: '../../html/googlepixel.html',
+            location: './html/googlepixel.html',
             link: 'https://drive.google.com/uc?export=view&id=1bVtfptfhmGI1Gf0K2stUtv49kgol8A_2',
         },
         {
-            location: '../../html/googlepixel.html',
+            location: './html/googlepixel.html',
             link: 'https://drive.google.com/uc?export=view&id=1xq5bAKJdQdZ_BTnkUx0MNfPCB9GKDf9p',
         }, 
         {
-            location: '../../html/oppo.html',
+            location: './html/oppo.html',
             link: 'https://drive.google.com/uc?export=view&id=1t-loQXKkBtrJZg6j91AeK8dJgmnWm7Qg',
         },
         {
-            location: '../../html/oppo.html',
+            location: './html/oppo.html',
             link: 'https://drive.google.com/uc?export=view&id=1MWyY33BqlWa3iiqBGViFykpOH_t5gKxq',
         },
     ],
