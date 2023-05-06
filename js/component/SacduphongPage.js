@@ -32,7 +32,10 @@ function SacduphongPage({ sacduphong, sortingType }) {
                                     <div class="product__card card shadow-sm">
                                         <p class="product__discount"></p>
                                         <div class="product__img__container">
-                                            <img src=${sacdp.img} alt="" class="bd-placeholder-img card-img-top p-3">
+                                            <img 
+                                                src=${sacdp.img} alt="" class="bd-placeholder-img card-img-top p-3"
+                                                onclick="dispatch('navigateCurrentProductDetail', 'sacduphong', ${index})"
+                                            >
                                         </div>
 
                                         <div class="product__body card-body">
@@ -64,7 +67,10 @@ function SacduphongPage({ sacduphong, sortingType }) {
                                     <div class="product__card card shadow-sm">
                                         <p class="product__discount"></p>
                                         <div class="product__img__container">
-                                            <img src=${sacdp.img} alt="" class="bd-placeholder-img card-img-top p-3">
+                                            <img 
+                                                src=${sacdp.img} alt="" class="bd-placeholder-img card-img-top p-3"
+                                                onclick="dispatch('navigateCurrentProductDetail', 'sacduphong', ${index})"
+                                            >
                                         </div>
 
                                         <div class="product__body card-body">
