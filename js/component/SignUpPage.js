@@ -11,7 +11,7 @@ function SignUpPage() {
 
         <div id="toastmess"></div>
 
-        <main>
+        <main class="signup__main">
             <section class="container form-signup w-25 m-auto pt-5 pb-5 text-center">
                 <form class="signup__form">
                     <h1 class="h3 mb-3 fw-normal">Đăng kí</h1>

@@ -11,7 +11,7 @@ function SignInPage({ }) {
 
         <div id="toastmess"></div>
 
-        <main>
+        <main class="signin__main">
             <section class="container form-signin w-25 m-auto pt-5 pb-5 text-center">
                 <form>
                     <h1 class="h3 mb-3 fw-normal">Vui lòng đăng nhập</h1>
