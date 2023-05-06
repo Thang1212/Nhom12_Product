@@ -1,0 +1,2 @@
+- Link web demo: thang1212.github.io/Nhom12_Product
+- Link source code: https://github.com/Thang1212/Nhom12_Product
